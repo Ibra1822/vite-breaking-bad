@@ -1,5 +1,10 @@
+@mixin lowFlex {
+  display: flex;
+  align-items: center;
+}
+
 @mixin baseFlex {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} ;

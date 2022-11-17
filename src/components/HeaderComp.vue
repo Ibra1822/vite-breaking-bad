@@ -4,9 +4,23 @@ export default {
 };
 </script>
 <template>
-  <h2>Header</h2>
+  <div class="ib-cont">
+    <img src="../assets/img/Breaking_Bad_logo.svg" alt="" />
+    <h1>Breaking Bad Api</h1>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+.ib-cont {
+  display: flex;
+  padding: 30px;
+  h1 {
+    color: #fff;
+  }
+  img {
+    height: 50px;
+  }
+}
+
 //
 </style>
