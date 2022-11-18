@@ -18,11 +18,17 @@ export default {
   methods: {
     getApi() {
       store.isLoaded = false;
-      axios.get(store.api).then((result) => {
-        store.array = result.data;
-        store.isLoaded = true;
-      });
+      axios
+        .get(store.api, {
+          params: { category: store.category },
+        })
+        .then((result) => {
+          store.array = result.data;
+          store.isLoaded = true;
+        });
     },
+
+    find() {},
   },
   mounted() {
     this.getApi();
@@ -32,7 +38,8 @@ export default {
 
 <template>
   <HeaderComp />
-  <MainComp />
+  {{ store.category }}
+  <MainComp @search="find" />
 </template>
 
 <style lang="scss">
