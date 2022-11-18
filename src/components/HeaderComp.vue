@@ -19,8 +19,7 @@ export default {
   }
   img {
     height: 50px;
+    margin: 0 20px 0 0;
   }
 }
-
-//
 </style>

@@ -12,15 +12,21 @@ export default {
       store,
     };
   },
+  methods: {
+    reset() {
+      store.category = "";
+      this.$emit("search");
+    },
+  },
 };
 </script>
 <template>
   <div class="container ib-cont">
     <div class="row">
-      <div class="col-3">
+      <div class="col-3 d-flex">
         <select
           v-model="store.category"
-          @click="$emit('search')"
+          @change="$emit('search')"
           class="form-select"
           aria-label="Default select example"
         >
@@ -28,6 +34,8 @@ export default {
           <option value="Breaking Bad">Breaking Bad</option>
           <option value="Better Call Saul">Better Call Saul</option>
         </select>
+
+        <button @click="reset()" class="btn btn-warning ms-3">Reset</button>
       </div>
     </div>
   </div>
@@ -66,6 +74,7 @@ export default {
     background-color: #212529;
     color: #fff;
     margin-top: 20px;
+    border-radius: 20px;
   }
 }
 .final-card {

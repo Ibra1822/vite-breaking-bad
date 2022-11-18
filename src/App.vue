@@ -3,6 +3,7 @@ import HeaderComp from "./components/HeaderComp.vue";
 import MainComp from "./components/MainComp.vue";
 import axios from "axios";
 import { store } from "./data/store.js";
+import { includeBooleanAttr } from "@vue/shared";
 
 export default {
   name: "App",
@@ -27,8 +28,6 @@ export default {
           store.isLoaded = true;
         });
     },
-
-    find() {},
   },
   mounted() {
     this.getApi();
@@ -38,8 +37,7 @@ export default {
 
 <template>
   <HeaderComp />
-  {{ store.category }}
-  <MainComp @search="find" />
+  <MainComp @search="getApi" />
 </template>
 
 <style lang="scss">

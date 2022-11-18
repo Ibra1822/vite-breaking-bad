@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/Variables" as *;
+@use "../styles/Mixin" as *;
 .card-cont {
   width: calc(100% / 5);
   padding: 15px;
@@ -33,16 +34,22 @@ export default {
   .ib-card {
     background-color: $primary-color;
     padding: 10px;
+    border-radius: 20px;
+
     .img-cont {
-      height: 80%;
+      height: 280px;
+      margin-bottom: 25px;
       img {
         width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
       }
     }
   }
 }
 .text-cont {
   text-align: center;
+  height: 150px;
   h4 {
     color: #fff;
   }
